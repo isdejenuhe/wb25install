@@ -19,7 +19,7 @@ chmod 777 *64
 
 ./webdev_update64
 
-echo "Enter password for wbuser TaOCT5w$Wqum"
+echo "Enter password for wbuser"
 adduser wbuser
 usermod -a -G webdevadmin wbuser
 usermod -a -G wbuser www-data

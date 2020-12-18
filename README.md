@@ -13,3 +13,7 @@ bash para instalar el app server webdev 24 en ubuntu 24
 #correr script
     $ ./WASInstall.sh
 
+#te pedira el key de linux
+#asignar contraseña al usuario wbuser
+#en el webdev marcar la opcion de instalar o permitir sitios anteriores(version 23,22,x)
+
