@@ -4,6 +4,8 @@ apt update
 apt upgrade
 apt-get -y dist-upgrade
 apt-get -y install libqtcore4 libqtgui4 libfreetype6 apache2 zip unzip
+apt autoremove
+apt-get autoremove
 
 mkdir /home/tmp
 
