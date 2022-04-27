@@ -40,3 +40,9 @@ chmod ug+rwx /home/wbuser/site
 chmod ug+rwx /home/wbuser/webserviceREST
 chmod ug+rwx /home/wbuser/webserviceSOAP
 chmod ug+rwx /home/wbuser/ftp_webdev
+
+cd /home
+
+rm -rf tmp
+
+rm -rf wb24install
