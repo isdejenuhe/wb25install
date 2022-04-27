@@ -1,5 +1,5 @@
 # wb24install
-bash para instalar el app server webdev 24 en ubuntu 24
+bash para instalar el app server webdev 24 en ubuntu 18
 
 # cambiarse a sudo
     $ sudo -i
@@ -21,9 +21,6 @@ ya que se instale hay que entrar a la pagina http://ip o dominio/WDAdminWeb240 c
 # al final del archivo conf agregar la siguiente informacion grabar el archivo
     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 
-# hay que reiniciar el servicios del apache para que cargue las modificaciones
-    $ systemctl restart apache2.service
-
 # editar archivo mpm
     $ nano /etc/apache2/mods-available/mpm_event.conf
 
@@ -38,3 +35,5 @@ ya que se instale hay que entrar a la pagina http://ip o dominio/WDAdminWeb240 c
         MaxConnectionsPerChild  10000
 </IfModule>
 
+# hay que reiniciar el servicios del apache para que cargue las modificaciones
+    $ systemctl restart apache2.service
