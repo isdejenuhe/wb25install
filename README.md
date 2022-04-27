@@ -24,3 +24,17 @@ bash para instalar el app server webdev 24 en ubuntu 24
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
     $ systemctl restart apache2.service
 
+# editar archivo mpm
+    $ nano /etc/apache2/mods-available/mpm_event.conf
+
+<IfModule mpm_event_module>
+        ServerLimit             188
+        StartServers            8
+        MinSpareThreads         75
+        MaxSpareThreads         250
+        ThreadLimit             64
+        ThreadsPerChild         32
+        MaxRequestWorkers       6000
+        MaxConnectionsPerChild  10000
+</IfModule>
+
