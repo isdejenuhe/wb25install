@@ -11,9 +11,9 @@ mkdir /home/tmp
 
 cd /home/tmp
 
-wget https://package.windev.com/pack/wx24_77f/us/webdev/WBDEP24LINUX64PACKUS077f.zip
+wget https://package.windev.com/pack/wx25/install/wx25_90f/us/WBDEP25LINUXPACKDVDUS090f.zip?s=N27A012673
 
-unzip  WBDEP24LINUX64PACKUS077f.zip
+unzip  WBDEP25LINUXPACKDVDUS090f.zip
 
 chmod 777 *64
 
@@ -45,4 +45,4 @@ cd /home
 
 rm -rf tmp
 
-rm -rf wb24install
+rm -rf wb25install
