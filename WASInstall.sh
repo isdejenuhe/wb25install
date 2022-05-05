@@ -13,11 +13,15 @@ cd /home/tmp
 
 wget https://package.windev.com/pack/wx25/install/wx25_90f/us/WBDEP25LINUXPACKDVDUS090f.zip?s=N27A012673
 
-unzip  WBDEP25LINUXPACKDVDUS090f.zip
+mv WBDEP25LINUXPACKDVDUS090f.zip\?s\=N27A012673  WBDEP25LINUXPACKDVDUS090f.zip
+
+unzip WBDEP25LINUXPACKDVDUS090f.zip
+
+cd Linux64x86/
 
 chmod 777 *64
 
-./webdev_update64
+./webdev_install64 
 
 echo "Enter password for wbuser"
 adduser wbuser
