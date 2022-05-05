@@ -45,4 +45,4 @@ cd /home
 
 rm -rf tmp
 
-rm -rf wb25install
+rm -rf wb24install
