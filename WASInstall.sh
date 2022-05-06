@@ -27,4 +27,4 @@ cd /home
 
 rm -rf tmp
 
-rm -rf wb24install
+rm -rf wb25install
