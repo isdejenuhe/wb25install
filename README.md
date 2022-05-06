@@ -11,9 +11,6 @@ bash para instalar el app server webdev 24 en ubuntu 18
     $ chmod 777 ./WASInstall.sh
 # correr script
     $ ./WASInstall.sh
-
-#cambiar el usuario a mayusculas el usuario WEBDEVUSER
-
 # para que se pueda leer el header de autorization en el api es necesario agregar al apache conf una directiva
     $ nano /etc/apache2/apache2.conf
     
