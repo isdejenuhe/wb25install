@@ -1,5 +1,5 @@
-# wb24install
-bash para instalar el app server webdev 24 en ubuntu 18
+# wb app server install
+bash para instalar el app server webdev 25 en ubuntu 18
 
 # cambiarse a sudo
     $ sudo -i
