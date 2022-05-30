@@ -3,7 +3,7 @@
 apt update
 apt upgrade
 apt-get -y dist-upgrade
-apt-get -y install libqtcore5 libqtgui5 libfreetype6 apache2 zip unzip ttf-mscorefonts-installer libapache2-mod-fcgid
+apt-get -y install apache2 zip unzip ttf-mscorefonts-installer libapache2-mod-fcgid
 apt autoremove
 apt-get autoremove
 
