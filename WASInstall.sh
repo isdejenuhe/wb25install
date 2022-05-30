@@ -4,11 +4,6 @@ apt update
 apt upgrade
 apt-get -y dist-upgrade
 apt-get -y install build-essential qt5-default libqt5gui5 libfreetype6 apache2 zip unzip ttf-mscorefonts-installer libapache2-mod-fcgid zlib1g-dev freetype2* ttf-*
-
-wget prdownloads.sourceforge.net/webadmin/webmin_1.981_all.deb
-dpkg -i webmin_1.981_all.deb
-apt-get -y -f install
-
 apt autoremove
 apt-get autoremove
 
