@@ -7,6 +7,8 @@ apt-get -y install qt5-default libfreetype6 apache2 zip unzip ttf-mscorefonts-in
 apt autoremove
 apt-get autoremove
 
+ln -s /usr/lib/libfreetype.so.6 /usr/lib/libfreetype.so
+
 mkdir /home/tmp
 
 cd /home/tmp
