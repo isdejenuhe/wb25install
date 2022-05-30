@@ -11,11 +11,11 @@ mkdir /home/tmp
 
 cd /home/tmp
 
-wget https://package.windev.com/pack/wx25/install/wx25_90f/us/WBDEP25LINUXPACKDVDUS090f.zip?s=N27A012673
+wget https://package.windev.com/pack/wx26/install/wx26_101d/us/WBDEP26LINUXPACKDVDUS101d.zip?s=N27A012673
 
-mv WBDEP25LINUXPACKDVDUS090f.zip\?s\=N27A012673  WBDEP25LINUXPACKDVDUS090f.zip
+mv WBDEP26LINUXPACKDVDUS101d.zip\?s\=N27A012673  WBDEP26LINUXPACKDVDUS101d.zip
 
-unzip WBDEP25LINUXPACKDVDUS090f.zip
+unzip WBDEP26LINUXPACKDVDUS101d.zip
 
 cd Linux64x86/
 
@@ -27,4 +27,4 @@ cd /home
 
 rm -rf tmp
 
-rm -rf wb25install
+rm -rf wb26install
