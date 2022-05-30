@@ -1,12 +1,12 @@
 # wb app server install
-bash para instalar el app server webdev 25 en ubuntu 18
+bash para instalar el app server webdev 26 en ubuntu 18
 
 # cambiarse a sudo
     $ sudo -i
 # clonar el repositorio
     $ cd /home
-    $ git clone https://github.com/isdejenuhe/wb25install.git
-    $ cd /home/wb25install/
+    $ git clone https://github.com/isdejenuhe/wb26install.git
+    $ cd /home/wb26install/
 # darle de derechos
     $ chmod 777 ./WASInstall.sh
 # correr script
