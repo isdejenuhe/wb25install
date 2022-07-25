@@ -52,6 +52,8 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 #editar /etc/apache2# nano ./sites-enabled/default-ssl.conf
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
-
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
     $ systemctl restart apache2.service
+
+#modificar derechos de la carpeta de log de apache
+$chmod -R go+rX /var/log/apache2/
