@@ -15,7 +15,7 @@ bash para instalar el app server webdev 26 en ubuntu 18
     $ nano /etc/apache2/apache2.conf
     
 # integrar formato json para custom log
-LogFormat "{\"_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%A\",\"host\":\"%{REQUEST_SCHEME}e://%{Host}i\",\"dur\":%{ms}T,\"cli\":{\"ip\":\"%h\"},\"ok\":false,\"sis\":\"APACHE\",\"proc\":\"%U%q\",\"trace\":\"APAHE ERROR:%>s %s METODO:%m %{User-agent}i\",\"mime\":\"%{Content-Type}i\",\"refer\":\"%{Referer}i\",\"szReq\":%I}" json
+LogFormat "{\"_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%A\",\"host\":\"%{REQUEST_SCHEME}e://%{Host}i\",\"dur\":%{ms}T,\"cli\":{\"ip\":\"%a\"},\"ok\":false,\"sis\":\"APACHE\",\"proc\":\"%U%q\",\"trace\":\"APAHE ERROR:%>s %s METODO:%m %{User-agent}i\",\"mime\":\"%{Content-Type}i\",\"refer\":\"%{Referer}i\",\"szReq\":%I}" json
 
 # al final del archivo conf agregar la siguiente informacion grabar el archivo
     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
@@ -28,17 +28,6 @@ FcgidIOTimeout 300
 
 # editar archivo mpm
     $ nano /etc/apache2/mods-available/mpm_event.conf
-
-<IfModule mpm_event_module>
-        ServerLimit             188
-        StartServers            8
-        MinSpareThreads         75
-        MaxSpareThreads         250
-        ThreadLimit             64
-        ThreadsPerChild         32
-        MaxRequestWorkers       5984
-        MaxConnectionsPerChild  10000
-</IfModule>
 
 #habilitar modulo unique 
 $ a2enmod unique_id
