@@ -1,5 +1,5 @@
 # wb app server install
-bash para instalar el app server webdev 26 en ubuntu 18
+bash para instalar el app server webdev 27 en ubuntu 20
 
 # cambiarse a sudo
     $ sudo -i
@@ -26,23 +26,24 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
 FcgidIOTimeout 300
 
-# editar archivo mpm
-    $ nano /etc/apache2/mods-available/mpm_event.conf
-
 #habilitar modulo unique 
 $ a2enmod unique_id
 
-#editar /etc/apache2# nano ./sites-available/default-ssl.conf
+#editar nano /etc/apache2/sites-available/default-ssl.conf
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
-#editar /etc/apache2# nano ./sites-available/000-default.conf
+#editar nano /etc/apache2/sites-available/000-default.conf
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
-#editar /etc/apache2# nano ./sites-enabled/default-ssl.conf
+#editar nano /etc/apache2/sites-enabled/default-ssl.conf
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
-    $ systemctl restart apache2.service
+$ systemctl restart apache2.service
 
 #modificar derechos de la carpeta de log de apache
-$chmod -R go+rX /var/log/apache2/
+$ chmod -R go+rX /var/log/apache2/
+
+# modificar los derechos de lograte para permitir leer los archivos de log de apache
+$ nano /etc/logrotate.d/apache2
+create 666 root adm
