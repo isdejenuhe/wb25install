@@ -38,6 +38,20 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 #editar nano /etc/apache2/sites-enabled/default-ssl.conf
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
+# editar archivo mpm
+    $ nano /etc/apache2/mods-available/mpm_event.conf
+
+<IfModule mpm_event_module>
+        ServerLimit             188
+        StartServers            8
+        MinSpareThreads         75
+        MaxSpareThreads         250
+        ThreadLimit             64
+        ThreadsPerChild         32
+        MaxRequestWorkers       5984
+        MaxConnectionsPerChild  10000
+</IfModule>
+
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
 $ systemctl restart apache2.service
 
