@@ -27,16 +27,16 @@ FcgidIOTimeout 300
 $ a2enmod unique_id
 
 #editar nano /etc/apache2/sites-available/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
 
 #editar nano /etc/apache2/sites-available/000-default.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
 
 #editar nano /etc/apache2/sites-enabled/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
 
 #editar nano /etc/apache2/conf-available/other-vhosts-access-log.conf 
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
 
 # editar archivo mpm
     $ nano /etc/apache2/mods-available/mpm_event.conf
