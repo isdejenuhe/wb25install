@@ -20,9 +20,6 @@ LogFormat "{\"_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%
 # al final del archivo conf agregar la siguiente informacion grabar el archivo
     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
 
-#editar /etc/apache2/conf-available/other-vhosts-access-log.conf modificar directiva customlog
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
-
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
 FcgidIOTimeout 300
 
@@ -36,6 +33,9 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {RE
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
 
 #editar nano /etc/apache2/sites-enabled/default-ssl.conf
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
+
+#editar nano /etc/apache2/conf-available/other-vhosts-access-log.conf 
 CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && {REQUEST_STATUS} != 403"
 
 # editar archivo mpm
