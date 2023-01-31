@@ -13,11 +13,11 @@ mkdir /home/tmp
 
 cd /home/tmp
      
-wget https://package.windev.com/pack/wx27/install/wx27_103s/us/WBDEP27LINUXPACKDVDUS103s.zip?s=N27A012673
+wget https://package.windev.com/pack/wx27/install/wx27_104h/us/WBDEP27LINUXPACKDVDUS104h.zip?s=N27A012673
 
-mv WBDEP27LINUXPACKDVDUS103s.zip\?s\=N27A012673  WBDEP27LINUXPACKDVDUS103s.zip
+mv WBDEP27LINUXPACKDVDUS104h.zip\?s\=N27A012673  WBDEP27LINUXPACKDVDUS104h.zip
 
-unzip WBDEP27LINUXPACKDVDUS103s.zip
+unzip WBDEP27LINUXPACKDVDUS104h.zip
 
 cd Linux64x86/
 
