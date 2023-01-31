@@ -5,8 +5,8 @@ bash para instalar el app server webdev 27 en ubuntu 20
     $ sudo -i
 # clonar el repositorio
     $ cd /home
-    $ git clone https://github.com/isdejenuhe/wb26install.git
-    $ cd /home/wb26install/
+    $ git clone https://github.com/isdejenuhe/wb27install.git
+    $ cd /home/wb27install/
 # darle de derechos
     $ chmod 777 ./WASInstall.sh
 # correr script
