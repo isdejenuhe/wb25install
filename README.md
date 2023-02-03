@@ -55,16 +55,12 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{R
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
 $ systemctl restart apache2.service
 
-#modificar derechos de la carpeta de log de apache
+# modificar derechos de la carpeta de log de apache
 $ chmod -R go+rX /var/log/apache2/
 
 # modificar los derechos de lograte para permitir leer los archivos de log de apache
 $ nano /etc/logrotate.d/apache2
 create 666 root adm
 
-#para instalar libreria externa
-$ curl -O -L http://github.com/jmcnamara/XlsxWriter/archive/main.tar.gz
+# para instalar libreria externa python excel
 
-$ tar zxvf main.tar.gz
-$ cd XlsxWriter-main/
-$ python setup.py install
