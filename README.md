@@ -61,3 +61,10 @@ $ chmod -R go+rX /var/log/apache2/
 # modificar los derechos de lograte para permitir leer los archivos de log de apache
 $ nano /etc/logrotate.d/apache2
 create 666 root adm
+
+#para instalar libreria externa
+$ curl -O -L http://github.com/jmcnamara/XlsxWriter/archive/main.tar.gz
+
+$ tar zxvf main.tar.gz
+$ cd XlsxWriter-main/
+$ python setup.py install
