@@ -63,4 +63,5 @@ $ nano /etc/logrotate.d/apache2
 create 666 root adm
 
 # para instalar libreria externa python excel
-
+$ apt install python3-pip
+$ pip install XlsxWriter
