@@ -67,7 +67,7 @@ $ apt install python3-pip
 $ pip install XlsxWriter
 
 # instalar driver odbc de postgresql
-sudo apt-get install odbc-postgresql,unixodbc 
+sudo apt-get install odbc-postgresql unixodbc 
 editar nano /etc/odbc.ini
 para crear conexion
 [PostgreSQL30]
