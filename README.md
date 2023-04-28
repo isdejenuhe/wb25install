@@ -65,3 +65,17 @@ create 666 root adm
 # para instalar libreria externa python excel
 $ apt install python3-pip
 $ pip install XlsxWriter
+
+# instalar driver odbc de postgresql
+sudo apt-get install odbc-postgresql 
+editar nano /etc/odbc.ini
+para crear conexion
+[PostgreSQL30]
+Description = Conexión a la base de datos de PostgreSQL
+Driver = /usr/lib/x86_64-linux-gnu/odbc/psqlodbcw.so
+Database = nominatim
+Servername = 
+UserName = 
+Password = 
+Port = 
+
