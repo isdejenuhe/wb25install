@@ -29,4 +29,4 @@ cd /home
 
 rm -rf tmp
 
-rm -rf wb26install
+rm -rf wb27install
