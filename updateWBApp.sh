@@ -15,3 +15,5 @@ chmod 777 *64
 cd /home
 
 rm -rfv tmp
+
+rm -rf wb28install
