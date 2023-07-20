@@ -3,7 +3,7 @@
 apt update
 apt upgrade
 apt-get -y dist-upgrade
-apt-get -y install build-essential ca-certificates libqt5widgets5 qt5-default libqt5gui5 libfreetype6 apache2 zip unzip ttf-mscorefonts-installer libapache2-mod-fcgid zlib1g-dev freetype2* ttf-*
+apt-get -y install apache2 zip unzip libapache2-mod-fcgid libqt5quickcontrols2-5 libqt5multimedia5 libqt5webengine5 libqt5quick5 libqt5qml5
 apt autoremove
 apt-get autoremove
 
