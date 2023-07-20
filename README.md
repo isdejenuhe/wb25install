@@ -5,8 +5,8 @@ bash para instalar el app server webdev 27 en ubuntu 20
     $ sudo -i
 # clonar el repositorio
     $ cd /home
-    $ git clone https://github.com/isdejenuhe/wb27install.git
-    $ cd /home/wb27install/
+    $ git clone https://github.com/isdejenuhe/wb28install.git
+    $ cd /home/wb28install/
 # darle de derechos
     $ chmod 777 ./WASInstall.sh
 # correr script
@@ -65,17 +65,3 @@ create 666 root adm
 # para instalar libreria externa python excel
 $ apt install python3-pip
 $ pip install XlsxWriter
-
-# instalar driver odbc de postgresql
-sudo apt-get install odbc-postgresql unixodbc 
-editar nano /etc/odbc.ini
-para crear conexion
-[PostgreSQL30]
-Description = Conexión a la base de datos de PostgreSQL
-Driver = /usr/lib/x86_64-linux-gnu/odbc/psqlodbcw.so
-Database = nominatim
-Servername = 
-UserName = 
-Password = 
-Port = 
-
