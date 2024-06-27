@@ -15,11 +15,12 @@ bash para instalar el app server webdev 27 en ubuntu 20
     $ nano /etc/apache2/apache2.conf
     
 # integrar formato json para custom log
-LogFormat "{\"apache_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%A\",\"host\":\"%{REQUEST_SCHEME}e://%{Host}i\",\"dur\":%{ms}T,\"ip\":\"%{X-Forwarded-For}i\",\"path\":\"/%{SoapAction}i\",\"proc\":\"%U%q\",\"user_agent\":\"%{User-agent}i\",\"method\":\"%m\",\"status_code\":%s,\"status_code_final\":%>s,\"mime\":\"%{Content-Type}i\",\"refer\":\"%{Referer}i\",\"szReq\":%I}" json
 
-# al final del archivo conf agregar la siguiente informacion grabar el archivo
-    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
-    AddType text/xml .wsdl
+    LogFormat "{\"apache_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%A\",\"host\":\"%{REQUEST_SCHEME}e://%{Host}i\",\"dur\":%{ms}T,\"ip\":\"%{X-Forwarded-For}i\",\"path\":\"/%{SoapAction}i\",\"proc\":\"%U%q\",\"user_agent\":\"%{User-agent}i\",\"method\":\"%m\",\"status_code\":%s,\"status_code_final\":%>s,\"mime\":\"%{Content-Type}i\",\"refer\":\"%{Referer}i\",\"szReq\":%I}" json
+
+    # al final del archivo conf agregar la siguiente informacion grabar el archivo
+        SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+        AddType text/xml .wsdl
 
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
     FcgidIOTimeout 300
