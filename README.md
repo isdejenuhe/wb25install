@@ -18,28 +18,31 @@ bash para instalar el app server webdev 27 en ubuntu 20
 LogFormat "{\"apache_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv\":\"%A\",\"host\":\"%{REQUEST_SCHEME}e://%{Host}i\",\"dur\":%{ms}T,\"ip\":\"%{X-Forwarded-For}i\",\"path\":\"/%{SoapAction}i\",\"proc\":\"%U%q\",\"user_agent\":\"%{User-agent}i\",\"method\":\"%m\",\"status_code\":%s,\"status_code_final\":%>s,\"mime\":\"%{Content-Type}i\",\"refer\":\"%{Referer}i\",\"szReq\":%I}" json
 
 # al final del archivo conf agregar la siguiente informacion grabar el archivo
-    SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+AddType text/xml .wsdl
 
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
 FcgidIOTimeout 300
 
-#habilitar modulo unique 
+#habilitar modulo unique y rewrite
 $ a2enmod unique_id
+$ a2enmod rewrite
 
 #editar nano /etc/apache2/sites-available/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/sites-available/000-default.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/sites-enabled/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/conf-available/other-vhosts-access-log.conf 
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{REQUEST_STATUS} != 403"
+CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 # editar archivo mpm
-    $ nano /etc/apache2/mods-available/mpm_event.conf
+$ nano /etc/apache2/mods-available/mpm_event.conf
 
 <IfModule mpm_event_module>
         ServerLimit             188
@@ -48,9 +51,14 @@ CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304 && %{R
         MaxSpareThreads         250
         ThreadLimit             64
         ThreadsPerChild         32
-        MaxRequestWorkers       5984
+        MaxRequestWorkers       6016
         MaxConnectionsPerChild  10000
 </IfModule>
+
+#Modificar el servicio de webdev para que se reinicie cuando falla
+nano /lib/systemd/system/WEBDEV28.service
+Restart=on-failure
+
 
 # hay que reiniciar el servicios del apache para que cargue las modificaciones
 $ systemctl restart apache2.service
