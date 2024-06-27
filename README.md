@@ -19,8 +19,7 @@ LogFormat "{\"apache_id\":\"%{UNIQUE_ID}e\",\"start\":{\"$date\":%{msec}t},\"srv
 
 # al final del archivo conf agregar la siguiente informacion grabar el archivo
     SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
-
-AddType text/xml .wsdl
+    AddType text/xml .wsdl
 
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
     FcgidIOTimeout 300
@@ -34,16 +33,20 @@ AddType text/xml .wsdl
     $ a2enmod rewrite
 
 #editar nano /etc/apache2/sites-available/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
+    
+    CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/sites-available/000-default.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
+    
+    CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/sites-enabled/default-ssl.conf
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
+
+    CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 #editar nano /etc/apache2/conf-available/other-vhosts-access-log.conf 
-CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
+    
+    CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 # editar archivo mpm
     $ nano /etc/apache2/mods-available/mpm_event.conf
