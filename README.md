@@ -12,7 +12,7 @@ bash para instalar el app server webdev 27 en ubuntu 20
 # correr script
     $ ./WASInstall.sh
 # para que se pueda leer el header de autorization en el api es necesario agregar al apache conf una directiva
-    $ nano /etc/apache2/apache2.conf
+    nano /etc/apache2/apache2.conf
     
 # integrar formato json para custom log
 
@@ -23,15 +23,16 @@ bash para instalar el app server webdev 27 en ubuntu 20
         AddType text/xml .wsdl
 
 # editar /etc/apache2/mods-available/fcgid.conf agregar FcgidIOTimeout 300 para que no marque error de timeout
+    nano /etc/apache2/mods-available/fcgid.conf
     FcgidIOTimeout 300
 
 #habilitar modulo unique
     
-    $ a2enmod unique_id
+    a2enmod unique_id
 
 #habilitar modulo unique y rewrite
     
-    $ a2enmod rewrite
+    a2enmod rewrite
 
 #editar nano /etc/apache2/sites-available/default-ssl.conf
     
@@ -50,7 +51,7 @@ bash para instalar el app server webdev 27 en ubuntu 20
     CustomLog ${APACHE_LOG_DIR}/access.log json "expr=%{REQUEST_STATUS} > 304"
 
 # editar archivo mpm
-    $ nano /etc/apache2/mods-available/mpm_event.conf
+    nano /etc/apache2/mods-available/mpm_event.conf
 
     <IfModule mpm_event_module>
             ServerLimit             188
@@ -77,7 +78,7 @@ bash para instalar el app server webdev 27 en ubuntu 20
     $ chmod -R go+rX /var/log/apache2/
 
 # modificar los derechos de lograte para permitir leer los archivos de log de apache
-    $ nano /etc/logrotate.d/apache2
+    nano /etc/logrotate.d/apache2
 
         create 666 root adm
 
