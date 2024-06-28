@@ -83,6 +83,11 @@ bash para instalar el app server webdev 27 en ubuntu 20
         create 666 root adm
 
 # para instalar libreria externa python excel
-    $ apt install python3-pip
+    $ apt install python3-pip --no-install-recommends
     $ pip install XlsxWriter
+    debian
+    apt install python3-pymongo 
+    apt install python3-XlsxWriter
+    
+    
     
