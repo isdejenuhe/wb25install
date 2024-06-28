@@ -28,6 +28,6 @@ chmod 550 webdev_install64
 
 cd /home
 
-rm -rf tmp
+rm -rfv tmp
 
-rm -rf wb28install
+rm -rfv wb28install
